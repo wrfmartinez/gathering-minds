@@ -18,7 +18,7 @@ const Nav = () => {
   return (
     <header>
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6"
+        className="fixed z-20 mx-auto flex w-full items-center justify-between p-4 pl-20 pr-20 bg-[#FAF9F6]"
         aria-label="Global"
       >
         <div className="nav-brand flex lg:flex-1">
