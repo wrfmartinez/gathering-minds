@@ -5,7 +5,7 @@ const Hero = () => {
         <h1 className="text-4xl font-bold mb-4">
           A place for the children of God to gather
         </h1>
-        <p className="text-xl mt-4">
+        <p className="text-xl mt-10">
           We should never walk this journey of following Christ alone. Here at
           Gathering Minds we grow spiritually, share experiences, & connect with
           others that are dedicated to living out the teachings of Jesus.
