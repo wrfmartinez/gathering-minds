@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section className="hero mx-auto max-w-7xl flex flex-col justify-center items-center gap-10 p-10 md:p-20 md:flex-row md:justify-around md:items-center">
       <div className="hero-text mt-20 md:w-[50%]">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-center md:text-start text-4xl font-bold mb-4">
           A place for the children of God to gather
         </h1>
         <p className="text-xl mt-10">
