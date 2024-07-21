@@ -24,7 +24,7 @@ const Nav = () => {
         <div className="nav-brand flex lg:flex-1">
           <Link className="flex gap-2 items-center -m-1.5 p-1.5" to="/">
             <img
-              className="brand-logo h-8 w-auto"
+              className="brand-logo w-[60px]"
               src={gmLogo}
               alt="gathering minds logo"
             />
@@ -83,7 +83,7 @@ const Nav = () => {
           <div className="flex items-center justify-between">
             <Link className="flex gap-2 items-center -m-1.5 p-1.5" to="/">
               <img
-                className="brand-logo h-8 w-auto"
+                className="brand-logo w-[60px]"
                 src={gmLogo}
                 alt="gathering minds logo"
               />
