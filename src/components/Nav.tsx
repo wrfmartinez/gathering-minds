@@ -28,7 +28,7 @@ const Nav = () => {
               src={gmLogo}
               alt="gathering minds logo"
             />
-            <h2 className="brand-name text-xl font-bold text-[#ff5131] hidden md:block">
+            <h2 className="brand-name text-xl font-bold text-[#EF844D] hidden md:block">
               Gathering Minds
             </h2>
           </Link>
