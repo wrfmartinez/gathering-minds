@@ -58,17 +58,16 @@ const Nav = () => {
           </Link>
           <div className="hidden z-10 lg:flex lg:items-center lg:gap-x-3 lg:flex-1 lg:justify-end">
             <Link
-              to="/create-account"
-              className="text-black p-1.5 rounded-md hover:opacity-50 duration-150 ease-in"
+              to="sign-in"
+              className="text-black p-1.5 hover:opacity-50 duration-150 ease-in"
             >
-              Sign Up
+              Sign In
             </Link>
             <Link
-              to="sign-in"
-              className="text-black p-1.5 hover:opacity-50 hover:scale-105 hover:bg-slate-600
-            hover:rounded-full hover:text-white duration-150 ease-in"
+              to="/create-account"
+              className="text-white p-1.5 rounded-md bg-slate-600 hover:scale-105 hover:bg-slate-600 hover:hover:opacity-50 duration-150 ease-in"
             >
-              Sign In <span aria-hidden="true">&rarr;</span>
+              Become a Member
             </Link>
           </div>
         </PopoverGroup>
@@ -116,7 +115,7 @@ const Nav = () => {
                   to="/create-account"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-zinc-800 duration-150 ease-in"
                 >
-                  Sign Up
+                  Become a Member
                 </Link>
                 <Link
                   to="sign-in"
