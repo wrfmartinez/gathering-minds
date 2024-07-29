@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import JWTRouter from "./controllers/jwt-router";
+import usersRouter from "./controllers/users";
 
 declare global {
   namespace NodeJS {
@@ -25,6 +26,7 @@ mongoose.connection.on("connected", () => {
 
 // ROUTES
 app.use("/jwt-router", JWTRouter);
+app.use("/users", usersRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);

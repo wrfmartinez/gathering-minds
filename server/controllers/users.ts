@@ -3,6 +3,14 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user";
 
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      JWT_SECRET: string;
+    }
+  }
+}
+
 const router = express.Router();
 const SALT_LENGTH = 12;
 
@@ -32,3 +40,25 @@ router.post("/signup", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
+router.post("/signin", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (user && bcrypt.compareSync(req.body.password, user.hashedPassword)) {
+      const token = jwt.sign(
+        {
+          id: user._id,
+          email: user.email,
+        },
+        process.env.JWT_SECRET
+      );
+      res.status(200).json({ token });
+    } else {
+      res.status(401).json({ error: "Invalid email or password" });
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+export default router;
