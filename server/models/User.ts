@@ -4,6 +4,7 @@ interface IUser {
   name: string;
   email: string;
   avatar?: string;
+  hashedPassword: string;
 }
 
 const userSchema = new Schema<IUser>({
@@ -13,11 +14,21 @@ const userSchema = new Schema<IUser>({
   },
   email: {
     type: String,
+    unique: true,
     required: true,
   },
+  // setup as a string for now but will change depending on the method: image upload, link src, or gravatar.
   avatar: String,
+  hashedPassword: {
+    type: String,
+    required: true,
+  }
 });
 
-const User = model<IUser>("User", userSchema);
+userSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    delete returnedObject.hashedPassword;
+  }
+})
 
-export default User;
+module.exports = model<IUser>("User", userSchema);
