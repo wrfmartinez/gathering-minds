@@ -6,7 +6,7 @@ router.get("/sign-token", (req, res) => {
   // mock user object
   const user = {
     _id: 1,
-    username: "test",
+    email: "example@test.com",
     password: "test",
   };
   // create a token using the sign method
