@@ -1,6 +1,8 @@
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
+import User from "./models/User.ts";
+import Course from "./models/Course.ts";
 
 declare global {
   namespace NodeJS {
@@ -19,7 +21,7 @@ mongoose.connection.on("connected", () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.render
 });
 
 app.listen(PORT, () => {
