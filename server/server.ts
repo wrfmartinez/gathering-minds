@@ -1,6 +1,8 @@
 import "dotenv/config";
+import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
+import JWTRouter from "./controllers/jwt-router";
 
 declare global {
   namespace NodeJS {
