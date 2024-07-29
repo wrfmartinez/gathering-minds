@@ -2,6 +2,14 @@ import express from "express";
 import jwt from "jsonwebtoken";
 const router = express.Router();
 
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      JWT_SECRET: string;
+    }
+  }
+}
+
 router.get("/sign-token", (req, res) => {
   // mock user object
   const user = {
@@ -15,7 +23,7 @@ router.get("/sign-token", (req, res) => {
 });
 
 router.post("verify-token", (req, res) => {
-  const token: string = req.headers.authorization?.split("")[1] ? req.headers.authorization.split("")[1] : "";
+  const token: any = req.headers.authorization?.split("")[1];
   // add verify method
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);

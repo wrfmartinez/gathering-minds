@@ -36,7 +36,7 @@ router.post("/signup", async (req, res) => {
       process.env.JWT_SECRET
     );
     res.status(201).json({ user, token });
-  } catch (error) {
+  } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
@@ -56,7 +56,7 @@ router.post("/signin", async (req, res) => {
     } else {
       res.status(401).json({ error: "Invalid email or password" });
     }
-  } catch (error) {
+  } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
